@@ -1,0 +1,28 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. MORTAMO2.
+      *    AUTHOR. PROGRAM THAT CALCULATES Mortgage Amortization
+      *    with Early Payoff and ROI
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT MORTGAGE-PARAM ASSIGN TO datafile
+               ORGANIZATION IS LINE SEQUENTIAL
+               ACCESS MODE IS SEQUENTIAL
+               FILE STATUS IS DATAFILE-STATUS.
+
+
+       DATA DIVISION.
+       FILE SECTION.
+
+       FD MORTGAGE-PARAM RECORDING MODE f. 
+
+       01  datafile.
+              05 LOAN-TITLE    PIC X(40).
+              05 loan_value    PIC 9(9)V99.
+              05 interest_rate PIC 9(3)V99.
+              05 years         PIC 9(3).
+              05 principal-additional PIC 9(9)V99.
+
+           
+       WORKING-STORAGE SECTION.
+       
